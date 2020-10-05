@@ -34,3 +34,25 @@ let tableau1 = ['ananas', 'banane', 'cerise']; // déclaration d'un tableau = re
 let tableau2 = tableau1; // partage la référence de tableau1 avec tableau2
 tableau2.push('datte'); // ajout d'un élément en fin de tableau
 console.log(tableau1);
+
+// La portée des variables
+// par défaut "scope" global
+// déclaration d'un bloc => création d'un "scope" local
+// accès possible au variables des scopes parents
+{
+    let somme = 12; // masque la variable somme du "scope" parent
+    let variableInterne = 'bonjour';
+    console.log(somme); // 12
+    console.log(somme2); // accès à la variable du scope parent
+    console.log(variableInterne); // accès à la variable du scope courrant
+}
+console.log(somme); // 7
+console.log(variableInterne); // Reference error
+
+// déclaration de variable: 4 façons
+//  - sans mot-clé : équivalent à var si la variable n'existe pas encore
+//      non-disponible en mode "strict"
+//  - avec "var" : mot-clé historique, portée de fonction, pratiquement plus utilisé
+//  - avec "let" : idem que var, mais portée de bloc
+//  - avec "const" : idem que let, mais ne peut être réaffecté
+// utilisation en générale 90% const, 10% let, les autres quasi jamais

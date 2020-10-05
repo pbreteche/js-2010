@@ -1,0 +1,14 @@
+.menu,
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu ul {
+    position: absolute;
+    background-color: #eee;
+}

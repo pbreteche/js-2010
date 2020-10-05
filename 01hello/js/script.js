@@ -94,7 +94,27 @@ if (12 > somme) { // évalue une expression booléenne
 }
 else if (25 > somme) {
      // si juste le if à l'intérieur du else
+
+     if (20 === somme) { // comparaison d'égalité '===', attention à l'affectation '='
+         console.log('la somme vaut 20');
+     }
+     if (somme = 20) {
+        // toujours vrai car on affecte 20 dans somme
+        // les valeurs numériques différetns de 0 sont considérées comme VRAI
+     }
+     /*
+     if (20 = somme) {
+         // erreur: il faut une variable à gauche du "="
+     }*/
 }
+
+const utilisateurConnecte = true; //imaginons résultat d'un traitement complexe
+// on préfère stocker le résultat du traitement dans une variable
+// plutôt qu'avoir des parenthèses du "if" difficile à lire
+if (utilisateurConnecte) {
+
+}
+
 
 // peu utilisé car:
 //  - ne fonctionne qu'avec une correspondance exacte
@@ -114,4 +134,28 @@ switch(somme) {
         console.log('la somme vaut tout 25, 12, 32 et 11');
 }
 
+/********************************
+ * Structure itérative
+ ********************************/
+// permet de répéter des instructions
+// exemple appliquer un traitement similaire à une liste de données
 
+let iterateur = 0;
+let total = 0;
+
+// attention à bien faire attention à la condition d'arrêt
+while (iterateur < 50) {
+    total += iterateur; // équivalent à: "total = total + iterateur"
+    iterateur++; // équivalent à: "iterateur = iterateur + 1"
+}
+console.log(total);
+
+for (let i=0; i < 50; i++) {
+    total -= i;
+}
+console.log(total);
+
+// spécifique aux tableaux
+for (const fruit of tableau1) {
+    console.log(fruit);
+}

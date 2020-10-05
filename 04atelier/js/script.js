@@ -42,3 +42,10 @@ button2.addEventListener('click', function(){
     }
 });
 */
+
+// boite de dialogue à utiliser avec modération
+/*
+alert('bonjour');
+const isOk = confirm('ok ?');
+const email = prompt('votre email');
+*/

@@ -1,3 +1,8 @@
+'use strict';
+// active le mode strict
+// Principe générale = transformer les problèmes en erreur
+// exemple: déclenche une erreur si déclaration de variable sans mot-clé
+
 // première instruction, utilisation de la console
 console.log('le fichier est chargé');
 
@@ -47,7 +52,7 @@ console.log(tableau1);
     console.log(variableInterne); // accès à la variable du scope courrant
 }
 console.log(somme); // 7
-console.log(variableInterne); // Reference error
+// console.log(variableInterne); // Reference error
 
 // déclaration de variable: 4 façons
 //  - sans mot-clé : équivalent à var si la variable n'existe pas encore

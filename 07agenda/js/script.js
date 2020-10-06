@@ -21,7 +21,13 @@ Agenda.prototype.init = function() {
         concertsHTML += `<li>${concert.title}</li>`;
     }
 
-    this.root.innerHTML = `<h1>Agenda</h1><ul>${concertsHTML}</ul>`;
+    this.root.innerHTML = `<h1>Agenda</h1>
+<form>
+<div><label><input type="checkbox" checked value="Rock">Rock</label>
+<div><label><input type="checkbox" checked value="Jazz">Jazz</label>
+<div><label><input type="checkbox" checked value="Rap">Rap</label>
+</form>
+<ul>${concertsHTML}</ul>`;
 }
 
 const Concert = function(title, style) {

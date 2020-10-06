@@ -1,0 +1,9 @@
+#gallery-nav img {
+    height: 2.5em;
+}
+
+#gallery-nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+}

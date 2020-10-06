@@ -1,4 +1,4 @@
-const imageList = [
+const IMAGE_LIST = [
     "acatos.png",
     "albator.png",
     "barracuda.png",

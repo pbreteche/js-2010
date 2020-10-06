@@ -14,7 +14,14 @@ Agenda.prototype.init = function() {
     this.concerts.push(new Concert('Concert 3', 'Rap'));
     this.concerts.push(new Concert('Concert 4', 'Rap'));
     this.concerts.push(new Concert('Concert 5', 'Rock'));
-    this.root.innerHTML = '<h1>Agenda</h1>';
+
+    let concertsHTML = '';
+
+    for (const concert of this.concerts) {
+        concertsHTML += '<li>' + concert.title + '</li>';
+    }
+
+    this.root.innerHTML = '<h1>Agenda</h1><ul>' + concertsHTML + '</ul>';
 }
 
 const Concert = function(title, style) {

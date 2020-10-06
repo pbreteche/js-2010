@@ -1,9 +1,33 @@
+#gallery-viewer img {
+    display: block;
+    margin: 0 auto;
+    border-radius: .25em;
+    box-shadow: 0 0 1em .5em black;
+}
+
 #gallery-nav img {
     height: 2.5em;
 }
 
 #gallery-nav ul {
     list-style-type: none;
+    padding: 0;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+#gallery-nav {
+    background-color: #123;
+}
+
+#gallery-nav a {
+    display: block;
+    padding: .25em;
+    margin: .5em;
+    border-radius: .25em;
+    background-color: #abc;
+}
+#gallery-nav img {
+    display: block;
 }

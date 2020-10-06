@@ -7,7 +7,6 @@ const Gallery = function(selector) {
 
 Gallery.prototype.init = function() {
     this.images = IMAGE_LIST;
-    console.log(this.images);
     this.root.innerHTML = `
 <div id="gallery-viewer"><img src="img/${this.images[0]}"></div>
 <nav id="gallery-nav">
@@ -17,7 +16,16 @@ Gallery.prototype.init = function() {
     }, '')}
     </ul>
 </nav>
-`
+`;
+
+    const navLinks = this.root.querySelectorAll('#gallery-nav a');
+
+    const viewerImage = this.root.querySelector('#gallery-viewer img');
+    for (const link of navLinks) {
+        link.addEventListener('click', function(){
+            viewerImage.src = this.children[0].src;
+        })
+    }
 }
 
 const myGallery = new Gallery('#gallery');

@@ -18,10 +18,10 @@ Agenda.prototype.init = function() {
     let concertsHTML = '';
 
     for (const concert of this.concerts) {
-        concertsHTML += '<li>' + concert.title + '</li>';
+        concertsHTML += `<li>${concert.title}</li>`;
     }
 
-    this.root.innerHTML = '<h1>Agenda</h1><ul>' + concertsHTML + '</ul>';
+    this.root.innerHTML = `<h1>Agenda</h1><ul>${concertsHTML}</ul>`;
 }
 
 const Concert = function(title, style) {
@@ -30,6 +30,4 @@ const Concert = function(title, style) {
 }
 
 const myAgenda = new Agenda(document.querySelector('#agenda'));
-console.log(myAgenda);
 myAgenda.init();
-console.log(myAgenda);

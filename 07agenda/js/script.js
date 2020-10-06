@@ -15,20 +15,14 @@ Agenda.prototype.init = function() {
     this.concerts.push(new Concert('Concert 3', 'Rap'));
     this.concerts.push(new Concert('Concert 4', 'Rap'));
     this.concerts.push(new Concert('Concert 5', 'Rock'));
-
-    let concertsHTML = '';
-
-    for (const concert of this.concerts) {
-        concertsHTML += `<li>${concert.title}</li>`;
-    }
-
     this.root.innerHTML = `<h1>Agenda</h1>
 <form>
 <div><label><input type="checkbox" checked value="Rock">Rock</label>
 <div><label><input type="checkbox" checked value="Jazz">Jazz</label>
 <div><label><input type="checkbox" checked value="Rap">Rap</label>
-</form>
-<ul>${concertsHTML}</ul>`;
+</form><ul></ul>`;
+    this.listHTML = this.root.querySelector('ul');
+    this.displayList();
 
     // capture de l'objet Agenda "this" dans une variable
     // pour être récupéré dans la fonction lié à l'événement
@@ -40,8 +34,20 @@ Agenda.prototype.init = function() {
                 that.filters.push(input.value);
             }
         }
-        console.log(that);
+        that.displayList();
     });
+}
+
+Agenda.prototype.displayList = function() {
+    let concertsHTML = '';
+
+    for (const concert of this.concerts) {
+        if (-1 !== this.filters.indexOf(concert.style)) {
+            concertsHTML += `<li>${concert.title}</li>`;
+        }
+    }
+
+    this.listHTML.innerHTML = concertsHTML;
 }
 
 const Concert = function(title, style) {

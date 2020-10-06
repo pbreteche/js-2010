@@ -1,6 +1,7 @@
 'use strict';
 
 // définition d'un objet littéral
+// préférable si un seul objet "ponctuel"
 const myContact1 = {
     firstName: 'Pierre',
     email: 'pbreteche@dawan.fr',
@@ -11,6 +12,7 @@ const myContact1 = {
 
 // création d'une fonction "constructeur"
 // qui a pour but de "construire" des objets
+// préférable si potentiellement plusieurs objets à construire
 const Contact = function(firstName, email) {
     this.firstName = firstName;
     this.email = email;
@@ -27,3 +29,6 @@ const myContact2 = new Contact('Gurvan', 'gcarriou@dawan.fr');
 
 console.log(myContact1);
 console.log(myContact2);
+
+// ajout d'une nouvelle propriété
+myContact1.lastName = 'jshfs,jh';

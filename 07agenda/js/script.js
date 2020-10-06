@@ -6,6 +6,7 @@
 const Agenda = function(rootElement) {
     this.root = rootElement;
     this.concerts = [];
+    this.filters = ['Rock', 'Jazz', 'Rap'];
 }
 
 Agenda.prototype.init = function() {
@@ -28,6 +29,19 @@ Agenda.prototype.init = function() {
 <div><label><input type="checkbox" checked value="Rap">Rap</label>
 </form>
 <ul>${concertsHTML}</ul>`;
+
+    // capture de l'objet Agenda "this" dans une variable
+    // pour être récupéré dans la fonction lié à l'événement
+    const that = this;
+    this.root.querySelector('form').addEventListener('input', function() {
+        that.filters = [];
+        for (const input of this.elements) {
+            if (input.checked) {
+                that.filters.push(input.value);
+            }
+        }
+        console.log(that);
+    });
 }
 
 const Concert = function(title, style) {

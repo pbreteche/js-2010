@@ -5,6 +5,10 @@
     box-shadow: 0 0 1em .5em black;
 }
 
+#gallery-viewer .sort-action {
+    text-align: center;
+}
+
 #gallery-nav img {
     height: 2.5em;
 }
@@ -27,6 +31,7 @@
     margin: .5em;
     border-radius: .25em;
     background-color: #abc;
+    cursor: pointer;
 }
 #gallery-nav img {
     display: block;

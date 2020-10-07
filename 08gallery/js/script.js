@@ -36,13 +36,14 @@ Gallery.prototype.init = function() {
 
     const sortButtons = this.root.querySelectorAll('.sort-action button');
 
-
-    for (const button of sortButtons) {
-        button.addEventListener('click', function(){
-            that.index--; // that.index = that.index - 1
-            viewerImage.src = 'img/'+that.images[that.index];
-        });
-    }
+    sortButtons[0].addEventListener('click', function(){
+        that.index--; // that.index = that.index - 1
+        viewerImage.src = 'img/'+that.images[that.index];
+    });
+    sortButtons[1].addEventListener('click', function(){
+        that.index++;
+        viewerImage.src = 'img/'+that.images[that.index];
+    });
 }
 
 const myGallery = new Gallery('#gallery');

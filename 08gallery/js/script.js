@@ -36,12 +36,24 @@ Gallery.prototype.init = function() {
 
     const sortButtons = this.root.querySelectorAll('.sort-action button');
 
-    sortButtons[0].addEventListener('click', function(){
-        that.index--; // that.index = that.index - 1
+    sortButtons[0].addEventListener('click', function() {
+        if (that.index > 0) {
+            that.index--;
+        }
+        else {
+            // dernière position dans le tableau = taille - 1
+            that.index = that.images.length - 1;
+        }
+        
         viewerImage.src = 'img/'+that.images[that.index];
     });
-    sortButtons[1].addEventListener('click', function(){
-        that.index++;
+    sortButtons[1].addEventListener('click', function() {
+        if (that.index < that.images.length - 1) {
+            that.index++;
+        }
+        else {
+            that.index = 0;
+        }
         viewerImage.src = 'img/'+that.images[that.index];
     });
 }

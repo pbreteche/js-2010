@@ -8,20 +8,7 @@ const Gallery = function(selector) {
 
 Gallery.prototype.init = function() {
     this.images = IMAGE_LIST;
-    this.root.innerHTML = `
-<div id="gallery-viewer"><img src="img/${this.images[this.index]}">
-<div class="sort-action">
-<button>&#9664;</button><button>&#9654;</button>
-</div>
-</div>
-<nav id="gallery-nav">
-    <ul>
-    ${this.images.reduce(function(accumulator, image, index) {
-        return `${accumulator}<li><a data-index="${index}"><img src="img/${image}"></a></li>`
-    }, '')}
-    </ul>
-</nav>
-`;
+    this.display();
 
     const that = this;
     const navLinks = this.root.querySelectorAll('#gallery-nav a');
@@ -56,6 +43,23 @@ Gallery.prototype.init = function() {
         }
         viewerImage.src = 'img/'+that.images[that.index];
     });
+}
+
+Gallery.prototype.display = function() {
+    this.root.innerHTML = `
+<div id="gallery-viewer"><img src="img/${this.images[this.index]}">
+<div class="sort-action">
+<button>&#9664;</button><button>&#9654;</button>
+</div>
+</div>
+<nav id="gallery-nav">
+    <ul>
+    ${this.images.reduce(function(accumulator, image, index) {
+        return `${accumulator}<li><a data-index="${index}"><img src="img/${image}"></a></li>`
+    }, '')}
+    </ul>
+</nav>
+`;
 }
 
 const myGallery = new Gallery('#gallery');
